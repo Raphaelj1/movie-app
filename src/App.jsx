@@ -63,7 +63,10 @@ function App() {
 	const loadTrendingMovies = async () => {
 		try {
 			const movies = await getTrendingMovies();
-			setTrendingMovies(movies);
+
+			if (movies) {
+				setTrendingMovies(movies);
+			}
 		} catch (error) {
 			console.error(error);
 		}
